@@ -41,6 +41,7 @@ This project uses [Semantic Versioning 2.0.0][3] for version numbering. To see
 what's changed between versions, please read [CHANGELOG.md][10]. That file also 
 has links to the download section of each release.
 
+
 [1]: https://www.python.org/
 [3]: https://semver.org/
 [8]: LICENSE
