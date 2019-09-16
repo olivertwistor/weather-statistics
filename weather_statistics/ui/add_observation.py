@@ -1,5 +1,3 @@
-import datetime
-
 from ui.input_form import InputForm
 
 
@@ -8,7 +6,7 @@ class AddObservation(InputForm):
     Input form used for adding an observation.
 
     :author: Johan Nilsson
-    :since: 0.1.0
+    :since:  0.1.0
     """
 
     def __init__(self):
@@ -20,14 +18,31 @@ class AddObservation(InputForm):
         print()
 
         # Date.
-        try:
-            date_input = input("Date of this observation (YYYY-MM-DD): ")
-            date_year, date_month, date_day = map(int, date_input.split("-"))
-            self.user_input['date'] = datetime.date(
-                date_year, date_month, date_day)
-        except ValueError:
-            print("Wrong input format. Only integers and dashes are allowed.")
-            return
+        self.user_input["date"] = self.date_input(
+            "Date of this observation (YYYY-MM-DD): ")
 
         # Location.
-        location_input = input("Location of this observation: ")
+        self.user_input["location"] = self.string_input(
+            "Location of this observation: ")
+
+        # Temperature.
+        self.user_input["temperature"] = self.float_input(
+            "Temperature in whichever unit (decimal values are okay): ")
+
+        # Precipitation.
+        self.user_input["precipitation"] = self.float_input(
+            "Precipitation in whichever unit (decimal values are okay): ")
+
+        # Wind speed.
+        self.user_input["wind_speed"] = self.float_input(
+            "Wind speed in whichever unit (decimal values are okay): ")
+
+        # Cloud cover.
+        self.user_input["cloud_cover"] = self.string_input(
+            "Cloud cover (e.g. 'sunny', 'overcast', 'heavy rain', "
+            "'partially cloudy'): ")
+
+        # Forecast.
+        self.user_input["forecast"] = self.boolean_input(
+            "Is this a forecast instead of an actual observation (Y for "
+            "forecast, N for observation)? ")

@@ -1,5 +1,6 @@
 import sys
 
+from models.observation import Observation
 from ui.add_observation import AddObservation
 
 
@@ -11,6 +12,7 @@ def main():
     """
     add_observation = AddObservation()
     add_observation.show_form()
+    observation = Observation.from_dictionary(add_observation.user_input)
     sys.exit(0)
 
 
