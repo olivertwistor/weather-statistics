@@ -7,7 +7,7 @@ setup(
     packages=[],
     entry_points={
         "console_scripts": [
-            "weather_statistics = weather_statistics.__main__:main"
+            "weatherstats = weatherstats.__main__:main"
         ]
     }
 )
